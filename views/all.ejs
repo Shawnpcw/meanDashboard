@@ -1,0 +1,106 @@
+<html>
+    <head>
+
+       <title>Trivia</title>
+       <meta cahrset ="utf-8">
+        <style>
+
+        body{
+            background: linear-gradient(320deg,lavenderblush,plum 82%);
+            color:white;
+            margin: 3%;
+        }
+        #container{
+            padding-top:60px;
+            width: 700px;
+            height:560px;
+            margin-left:20%;
+            border-radius: 15px;
+            opacity: .9;
+            margin-top: 50px;   
+        }
+
+        h2{
+            text-align: center;
+            font-size: 235%;
+        }
+
+
+        #winningStatement{
+            position: absolute;
+            margin-left: 100px;
+            margin-top: 0%;
+            padding-left: 0%;
+            padding-top: 165px;
+            width: 475px;
+            font-size: 575%;
+            font-size: 575%;
+            
+        }
+        table { 
+            text-align: center;
+            width:100%;
+            height:100%;
+            border-radius:20px;
+          
+            border-spacing: 30px;
+            border-collapse: separate;
+        }
+        .red{
+            background-color:red;
+        }   
+        .aqua{
+            background-color:aqua;
+       
+        }
+        h1{
+            margin-left:250px;
+            color: white;
+            font-size:100px;
+        }
+
+        td{
+            font-size: 189%;
+            box-shadow: -1px -3px 27px 5px rgb(189, 189, 189) inset;
+            background-color:whitesmoke;
+            margin:1px;
+            width: 100px;
+            height: 100px;
+            border-radius:18px;
+        }
+        #choices{
+            text-align: center;
+        }
+        #score{
+            position: absolute;
+            background-color:whitesmoke;
+            border-radius:18px;
+            box-shadow: -1px -3px 27px 5px rgb(189, 189, 189) inset;
+            height: 32px;
+            width: 52px;
+            padding: 29px;
+            font-size: 31px; 
+        }
+        a{
+       
+       text-decoration: none;
+   }
+        </style>
+    </head>
+    <body>
+
+        <h2>INDEX</h2>
+        <% for (let wolf of data){%>
+            <h4><a href="/wolf/<%=wolf._id%>"><%=wolf.name%></a></h4>
+            <h5><%=wolf.color%></h5>
+            <button><a href="/wolf/edit/<%=wolf._id%>">Edit</a></button>
+            <button><a href="/removeWolf/<%=wolf._id%>">Remove</a></button>
+            
+        <%}%>
+
+        <button><a href="/wolf/new">Create New</a></button>
+            
+            
+    
+    </body>
+</html>
